@@ -22,6 +22,10 @@ export class AppComponent {
     25, 37, 19, -4, 28, 21, 19, 28, 33, 31, 9, 11, 5, -12, -5,
   ];
 
+  constructor() {
+    this.historicTemperatures.sort((a, b) => (a > b ? 1 : -1));
+  }
+
   onReset(index: number) {
     //  Can't do this when sorting an array in a pipe, pipe won't re-run!
     //  Nvm, it can if u set pure to false in the pipe:
