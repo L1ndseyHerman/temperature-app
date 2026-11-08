@@ -24,9 +24,11 @@ export class AppComponent {
 
   onReset(index: number) {
     //  Can't do this when sorting an array in a pipe, pipe won't re-run!
-    //this.historicTemperatures[index] = 18;
-    const newTemps = [...this.historicTemperatures];
-    newTemps[index] = 18;
-    this.historicTemperatures = newTemps;
+    //  Nvm, it can if u set pure to false in the pipe:
+    this.historicTemperatures[index] = 18;
+    //  Works:
+    //const newTemps = [...this.historicTemperatures];
+    //newTemps[index] = 18;
+    //this.historicTemperatures = newTemps;
   }
 }
